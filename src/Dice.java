@@ -6,6 +6,10 @@ public class Dice {
 		value =  DiceValue.getRandom();
 	}
 	
+	public Dice (DiceValue val){
+		this.value = val;
+	}
+	
 	public DiceValue getValue() {
 		return value;
 	}
@@ -13,6 +17,7 @@ public class Dice {
 	public DiceValue roll() {
 		return DiceValue.getRandom();
 	}		
+	
 	
 	public String toString() {
 		return value.toString();
