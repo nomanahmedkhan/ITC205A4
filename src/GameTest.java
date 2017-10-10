@@ -18,7 +18,7 @@ public class GameTest {
 		
 		testGame.playRound(testPlayer, player_choice, 5);
 		
-		assertEquals(25, testPlayer.getBalance());
+		assertEquals(30, testPlayer.getBalance());
 		
 	}
 	@Test
@@ -34,9 +34,10 @@ public class GameTest {
 		
 		testGame.playRound(testPlayer, player_choice, 5);
 		
-		assertEquals(30, testPlayer.getBalance());
+		assertEquals(35, testPlayer.getBalance());
 		
 	}
+	
 		
 
 }
