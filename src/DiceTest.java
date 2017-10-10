@@ -38,9 +38,9 @@ public class DiceTest {
                 player.setLimit(limit);
                 int bet = 5;
 
-                System.out.println(String.format("Start Game %d: ", i));
-                System.out.println(String.format("%s starts with balance %d, limit %d", 
-                		player.getName(), player.getBalance(), player.getLimit()));
+     //           System.out.println(String.format("Start Game %d: ", i));
+     //           System.out.println(String.format("%s starts with balance %d, limit %d", 
+     //           		player.getName(), player.getBalance(), player.getLimit()));
 
                 int turn = 0;
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
@@ -70,8 +70,8 @@ public class DiceTest {
                     
                 } //while
 
-                System.out.print(String.format("%d turns later.\nEnd Game %d: ", turn, i));
-                System.out.println(String.format("%s now has balance %d\n", player.getName(), player.getBalance()));
+       //         System.out.print(String.format("%d turns later.\nEnd Game %d: ", turn, i));
+       //         System.out.println(String.format("%s now has balance %d\n", player.getName(), player.getBalance()));
                 
             } //for
             
