@@ -10,7 +10,7 @@ public class PlayerTest {
 		Player testPlayer = new Player ("noman", 5);
 		int bet = 5;
 		boolean testResult = testPlayer.balanceExceedsLimitBy(bet);
-		assertEquals(false, testResult);
+		assertEquals(true, testResult);
 	}
 	
 	public void testPlayerUnableToReachLimit2() {
