@@ -1,11 +1,11 @@
 import java.util.List;
 import java.io.*;
-
+import java.util.*;
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-	   BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+	   Scanner console = new Scanner(System.in);
 
         Dice d1 = new Dice();
         Dice d2 = new Dice();
@@ -17,20 +17,37 @@ public class Main {
 
         int totalWins = 0;
         int totalLosses = 0;
-
+        
+        int age;
+        System.out.println("What is your age? You must be 18 or older to play ");
+        age = console.nextInt();
+        
+        if(age >= 18){
+        
         while (true)
         {
             int winCount = 0;
             int loseCount = 0;
-            
+        String name;
+        int balance;
+        int bet;
+        System.out.println("What is your name? ");
+        name = console.next();
+        System.out.println("What is your balance?");
+        balance = console.nextInt();
             for (int i = 0; i < 100; i++)
             {
-            	String name = "Fred";
-            	int balance = 100;
+            	//String name = "Fred";
+            	//int balance = 100;
             	int limit = 0;
                 player = new Player(name, balance);
                 player.setLimit(limit);
-                int bet = 5;
+                System.out.println("How much do you want to bet?");
+                
+                bet = console.nextInt();
+                if(bet == 0){
+                	break;
+                }
 
                 System.out.println(String.format("Start Game %d: ", i));
                 System.out.println(String.format("%s starts with balance %d, limit %d", 
@@ -73,11 +90,15 @@ public class Main {
             totalWins += winCount;
             totalLosses += loseCount;
 
-            String ans = console.readLine();
-            if (ans.equals("q")) break;
+            System.out.println("Do you want to play again? Type no if you dont");
+            name = console.next();
+            if (name.equals("no")) break;
         } //while true
-        
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
+        }// if age
+        else{
+        System.out.println("You're not old enough to play");
+        }
 	}
 
 }
