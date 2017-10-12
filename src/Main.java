@@ -22,17 +22,18 @@ public class Main {
         System.out.println("What is your age? You must be 18 or older to play ");
         age = console.nextInt();
         
-        if(age >= 18){
-        
+        while(age >= 18){
+        	String name;
+        	System.out.println("What is your name? ");
+            name = console.next();
         while (true)
         {
             int winCount = 0;
             int loseCount = 0;
-        String name;
+        
         int balance;
         int bet;
-        System.out.println("What is your name? ");
-        name = console.next();
+        
         System.out.println("What is your balance?");
         balance = console.nextInt();
             for (int i = 0; i < 100; i++)
@@ -42,7 +43,7 @@ public class Main {
             	int limit = 0;
                 player = new Player(name, balance);
                 player.setLimit(limit);
-                System.out.println("How much do you want to bet?");
+                System.out.println("How much do you want to bet? bet 0 to end this round");
                 
                 bet = console.nextInt();
                 if(bet == 0){
@@ -95,10 +96,12 @@ public class Main {
             if (name.equals("no")) break;
         } //while true
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
-        }// if age
-        else{
+        System.out.println("What is your age? You must be 18 or older to play ");
+        age = console.nextInt();
+        }// while age 
+        
         System.out.println("You're not old enough to play");
         }
 	}
 
-}
+
